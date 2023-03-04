@@ -1,18 +1,18 @@
 package com.mdas.api.g6.infrastructure.http.pokeapi.repository;
 
 import com.mdas.api.g6.infrastructure.http.pokeapi.entity.PokemonApiEntity;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PokemonHttpRepository {
 
     private final RestTemplate restTemplate;
-    @Value("${pokeapi.base-url}")
+    @Value("${pokeapi.url}")
     private String baseUrl;
 
     public PokemonApiEntity getPokemonByName(String name) {

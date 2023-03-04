@@ -3,9 +3,11 @@ package com.mdas.api.g6.infrastructure.http.pokeapi.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 public class PokemonApiEntity {

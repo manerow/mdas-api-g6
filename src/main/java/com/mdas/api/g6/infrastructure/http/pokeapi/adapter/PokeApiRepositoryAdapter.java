@@ -5,11 +5,11 @@ import com.mdas.api.g6.domain.repository.PokemonRepositoryPort;
 import com.mdas.api.g6.infrastructure.http.pokeapi.repository.PokemonHttpRepository;
 import com.mdas.api.g6.infrastructure.http.pokeapi.entity.PokemonApiEntity;
 import com.mdas.api.g6.infrastructure.http.pokeapi.mapper.PokemonApiMapper;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Component;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
-@Component
-@AllArgsConstructor
+@Repository
+@RequiredArgsConstructor
 public class PokeApiRepositoryAdapter implements PokemonRepositoryPort {
 
     private final PokemonHttpRepository pokeApiHttpRepository;

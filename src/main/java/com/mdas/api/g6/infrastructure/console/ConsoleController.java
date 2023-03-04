@@ -37,6 +37,7 @@ public class ConsoleController implements CommandLineRunner {
                 System.out.println("Invalid command.");
                 System.out.println("For obtaining a pokemon type introduce \"type <pokemon_name>\".");
                 System.out.println("For exiting the application introduce \"exit\"");
+                continue;
             }
 
             String pokemonName = input.split(" ")[1];
