@@ -1,6 +1,6 @@
 package com.mdas.api.g6.application.impl;
 
-import com.mdas.api.g6.domain.repository.PokeService;
+import com.mdas.api.g6.application.PokeService;
 import com.mdas.api.g6.domain.repository.SupportGetPoke;
 import com.mdas.api.g6.infrastructure.adapters.PokeAdapter;
 import lombok.RequiredArgsConstructor;

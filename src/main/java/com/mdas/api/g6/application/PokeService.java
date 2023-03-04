@@ -1,4 +1,4 @@
-package com.mdas.api.g6.domain.repository;
+package com.mdas.api.g6.application;
 
 import org.springframework.http.ResponseEntity;
 
