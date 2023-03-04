@@ -26,17 +26,20 @@ public class ConsoleController implements CommandLineRunner {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.print("Enter command: ");
+            System.out.print("Enter a command (or 'q' to quit): ");
             String input = scanner.nextLine();
 
-            if (input.equals("exit")) {
+            if (input.equalsIgnoreCase("q")) {
+                System.out.println("Closing applicaiton...");
                 break;
             }
 
             if (!input.startsWith("type")) {
-                System.out.println("Invalid command.");
-                System.out.println("For obtaining a pokemon type introduce \"type <pokemon_name>\".");
-                System.out.println("For exiting the application introduce \"exit\"");
+                System.out.print("\n" +
+                        "Invalid command. Commands:\n" +
+                        "* \'type <pokemon_name>\'   --> Obtains the desired pokemon types.\n" +
+                        "* \'q\'                     --> Exit application.\n" +
+                        "\n");
                 continue;
             }
 
@@ -45,16 +48,19 @@ public class ConsoleController implements CommandLineRunner {
             try {
                 pokemonTypes = getPokemonTypesByNameUseCase.execute(pokemonName);
             } catch (Exception e) {
-                System.out.println("Error occurred trying to fetch pokemon types. Error: ");
-                System.out.println(e.getMessage());
+                System.out.print("\n" +
+                        "Error occurred trying to fetch pokemon types.\n" +
+                        "Error: " + e.getMessage() +
+                        "\n");
                 continue;
             }
 
-            System.out.println("Types of " + pokemonName + " are:");
-            System.out.println(pokemonTypes.stream().map(PokemonType::getName).collect(Collectors.toList()));
+            System.out.print("\n" +
+                    "Types of " + pokemonName + " are: " +
+                    pokemonTypes.stream().map(PokemonType::getName).collect(Collectors.toList()) +
+                    "\n");
 
         }
-        System.out.println("Closing applicaiton...");
         System.exit(0);
     }
 }
