@@ -1,0 +1,13 @@
+server:
+  port: 9091
+  servlet:
+    context-path: /ms-ne-pokemon/v1
+
+spring:
+  application:
+    name: ms-ne-pokemon-pga-v1
+
+api:
+  support:
+      url: https://pokeapi.co/api/v2/pokemon/
+
