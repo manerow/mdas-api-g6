@@ -1,15 +1,17 @@
 package com.mdas.api.g6.domain;
 
+import com.mdas.api.g6.domain.valueobject.PokemonType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
 public class Pokemon {
+    private Integer id;
     private String name;
-    private List<String> types;
+    private List<PokemonType> types;
 }
