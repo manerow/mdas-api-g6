@@ -1,5 +1,6 @@
-package com.mdas.api.g6.application;
+package com.mdas.api.g6.application.impl;
 
+import com.mdas.api.g6.application.GetConsolePokemonTypesByName;
 import com.mdas.api.g6.domain.Pokemon;
 import com.mdas.api.g6.domain.valueobject.PokemonType;
 import com.mdas.api.g6.domain.repository.PokemonRepositoryPort;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
-public class GetPokemonTypesByNameUseCase {
+public class GetConsolePokemonTypesByNameImpl implements GetConsolePokemonTypesByName {
 
     private final PokemonRepositoryPort pokemonRepository;
 
