@@ -8,16 +8,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.HttpServerErrorException;
-import org.springframework.web.client.ResourceAccessException;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.*;
 
 @Component
 @RequiredArgsConstructor
 public class PokemonHttpRepository {
 
-    private final RestTemplate restTemplate;
+    private RestTemplate restTemplate = new RestTemplate();
     @Value("${pokeapi.url}")
     private String baseUrl;
 
@@ -28,11 +25,8 @@ public class PokemonHttpRepository {
             return response.getBody();
         } catch (HttpClientErrorException.NotFound e) {
             throw new PokemonNotFoundException();
-        } catch (HttpServerErrorException.ServiceUnavailable
-                 | HttpServerErrorException.GatewayTimeout
-                 | ResourceAccessException e) {
+        } catch (RestClientException e) {
             throw new PokeApiConnectionErrorException();
         }
     }
-
 }
