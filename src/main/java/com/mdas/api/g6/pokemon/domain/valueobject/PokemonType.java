@@ -1,10 +1,12 @@
-package com.mdas.api.g6.domain.valueobject;
+package com.mdas.api.g6.pokemon.domain.valueobject;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @AllArgsConstructor
 @Getter
+@Setter
 public class PokemonType {
     private String name;
 }
