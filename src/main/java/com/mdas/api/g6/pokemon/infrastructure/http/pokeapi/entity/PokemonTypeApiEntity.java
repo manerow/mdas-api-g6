@@ -1,4 +1,4 @@
-package com.mdas.api.g6.infrastructure.http.pokeapi.entity;
+package com.mdas.api.g6.pokemon.infrastructure.http.pokeapi.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonParser;
