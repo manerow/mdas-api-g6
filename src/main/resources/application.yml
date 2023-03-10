@@ -8,4 +8,4 @@ spring:
       name: ms-ne-pokemon-pga-v1
 
 pokeapi:
-    url: https://pokeapi.co/api/v2/
+    url: https://pokeapi.co/api/v2
